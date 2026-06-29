@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop: HTML Headings</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 10px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3cded;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(90deg, rgba(132, 0, 255, 0.411), rgb(0, 255, 42));
+            padding: 20px;
+            color: #1b1b1b;
+            text-align: center;
+            box-shadow: 0 4px 8px #0d415d;
+        }
+
+        header a {
+            color: #1b1b1b;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            padding: 50px 0;
+        }
+
+        .hero-text-h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: rgb(43, 43, 122);
+        }
+
+        .hero-text-p {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: rgb(84, 84, 94);
+        }
+
+        .card {
+            background: #ededed;
+            padding: 25px 40px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            border-top: 4px solid #ff0000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        ul {
+            margin-top: 10px;
+        }
+
+        pre {
+            background: #f0f0f0;
+            padding: 12px;
+            border-left: 4px solid #7435a8;
+            overflow-x: auto;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .note {
+            border-left: 4px solid #e0e0e0;
+            padding-left: 12px;
+            margin-top: 12px;
+            color: #666;
+        }
+
+        .note::before {
+            content: "💡 ";
+            display: inline-block;
+            margin-right: 6px;
+            font-size: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .text-center a {
+            text-decoration: none;
+            color: #0066cc;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .text-center a:hover {
+            text-decoration: underline;
+            color: rgb(255, 0, 0);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-right: 6px;
+            color: #fff;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-h1 { background-color: #e63946; }   /* แดง */
+        .badge-h2 { background-color: #e07800; }   /* ส้ม */
+        .badge-h3 { background-color: #d4a017; }   /* เหลือง */
+        .badge-h4 { background-color: #2a9d8f; }   /* เขียว */
+        .badge-h5 { background-color: #457b9d; }   /* น้ำเงิน */
+        .badge-h6 { background-color: #93604c; }   /* ม่วง */
+
+        /* Card 2 heading sizes */
+        .card-examples h1 { font-size: 2em; text-align: left; margin-bottom: 5px; }
+        .card-examples h2 { font-size: 1.5em; }
+        .card-examples h3 { font-size: 1.17em; }
+        .card-examples h4 { font-size: 1em; }
+        .card-examples h5 { font-size: 0.83em; }
+        .card-examples h6 { font-size: 0.67em; }
+
+        .card-examples h1 { border: 2px solid #e63946; background-color: #ffe0e3; padding: 5px 10px; margin-bottom: 6px; }
+        .card-examples h2 { border: 2px solid #e07800; background-color: #fff3e0; padding: 5px 10px; margin-bottom: 6px; }
+        .card-examples h3 { border: 2px solid #d4a017; background-color: #fffbe0; padding: 5px 10px; margin-bottom: 6px; }
+        .card-examples h4 { border: 2px solid #2a9d8f; background-color: #e0f7f4; padding: 5px 10px; margin-bottom: 6px; }
+        .card-examples h5 { border: 2px solid #457b9d; background-color: #e0eef7; padding: 5px 10px; margin-bottom: 6px; }
+        .card-examples h6 { border: 2px solid #6a4c93; background-color: #f0e6ff; padding: 5px 10px; margin-bottom: 6px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <p>เรียนรู้เว็บเบื้องต้น</p>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <section class="hero">
+            <h1 class="hero-text-h1">แบบฝึกปฏิบัติ HTML Heading</h1>
+            <p class="hero-text-p">ฝึกใช้แท็ก &lt;h1&gt; – &lt;h6&gt; และการปรับขนาดหัวข้อด้วย CSS</p>
+        </section>
+
+        <!-- Card 1: ความหมายของ Headings -->
+        <section class="card">
+            <h2>1. ความหมายของ Headings (H1–H6)</h2>
+            <p>HTML มีหัวข้อทั้งหมด 6 ระดับ:</p>
+            <ul>
+                <li><span class="badge badge-h1">H1</span> – หัวข้อใหญ่สุด ใช้สำหรับชื่อหน้าเว็บหรือหัวข้อหลัก</li>
+                <li><span class="badge badge-h2">H2</span> – หัวข้อรอง แบ่ง Section ของเนื้อหา</li>
+                <li><span class="badge badge-h3">H3</span> – หัวข้อย่อยภายใน H2</li>
+                <li><span class="badge badge-h4">H4</span> – ย่อยลงไปอีกระดับ</li>
+                <li><span class="badge badge-h5">H5</span> – ใช้น้อย แต่เน้นลำดับข้อมูล</li>
+                <li><span class="badge badge-h6">H6</span> – เล็กสุด ใช้กับหัวข้อระดับลึก</li>
+            </ul>
+            <div class="note">
+                <b>คำแนะนำ:</b> H1 ควรมีเพียง 1 อันในแต่ละหน้า เพื่อช่วย SEO และโครงสร้างเอกสาร
+            </div>
+        </section>
+
+
+        <section class="card card-examples">
+            <h2>2. ตัวอย่างการใช้ H1–H6</h2>
+            <pre><code>
+&lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+&lt;h2&gt;HTML Basics&lt;/h2&gt;
+&lt;h3&gt;What is HTML?&lt;/h3&gt;
+&lt;h4&gt;HTML Syntax&lt;/h4&gt;
+&lt;h5&gt;Example Code&lt;/h5&gt;
+&lt;h6&gt;Note: Case Sensitive&lt;/h6&gt;
+            </code></pre>
+
+            <p>เมื่อแสดงผลจะได้ขนาดลดหลั่นแบบนี้:</p>
+
+            <h1>H1: Welcome to My Website</h1>
+            <h2>H2: HTML Basics</h2>
+            <h3>H3: What is HTML?</h3>
+            <h4>H4: HTML Syntax</h4>
+            <h5>H5: Example Code</h5>
+            <h6>H6: Note about heading size</h6>
+        </section>
+
+        <!-- ปุ่มกลับ -->
+        <p class="text-center">
+            <a href="index.html">🏠 Back to Home</a>
+        </p>
+
+    </div>
+
+</body>
+</html>
