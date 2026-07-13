@@ -71,36 +71,22 @@ nav a:hover {
 }
 
 .hero {
-  background: white;
+  background: rgb(20, 16, 16);
   padding: 45px 70px 30px;
   display: flex;
   align-items: center;
   gap: 24px;
 }
 
-.hero-icon {
-  width: 70px;
-  height: 70px;
-  min-width: 70px;
-  background: #007bff;
-  color: white;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  font-weight: bold;
-}
-
 .hero-text h1 {
   font-size: 32px;
-  color: #003c9e;
+  color: #0667f8;
   margin-bottom: 6px;
 }
 
 .hero-text p {
   font-size: 17px;
-  color: #4b5563;
+  color: #8d8e91;
 }
 
 .container {
@@ -112,20 +98,249 @@ nav a:hover {
 
 .card-grid {
   display: grid;
-  grid-template-columns: 1fr 1.05fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr; /* แก้ตรงนี้ให้เป็น 1fr ทั้ง 3 อัน */
   gap: 25px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .card {
-  background: white;
+  background: #fcfcfc;
   border-radius: 18px;
   border: 1px solid #dbeafe;
-  box-shadow: 0 8px 22px rgba(15, 47, 117, 0.08);
+  box-shadow: 0 8px 22px rgba(235, 237, 238, 0.08);
   overflow: hidden;
 }
- 
+
+.card-header {
+  padding: 18px 22px;
+  border-bottom: 1px solid #ffffff;
+  background: #f5f4f4;
+  font-size: 20px;
+  font-weight: bold;
+  color: #005bea;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-icon {
+  font-size: 21px;
+}
+
+.card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  background: #378be6;
+  font-size: 18px;
+}
+
+.card-body {
+  padding: 20px 22px;
+}
+
+.format-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.format-row:last-child {
+  border-bottom: none;
+}
+
+.label {
+  display: inline-block;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  padding: 6px 9px;
+  border-radius: 6px;
+  letter-spacing: 0.3px;
+}
+
+.b-label {
+  background: #2563eb;
+}
+.strong-label {
+  background: #16a34a;
+}
+.i-label {
+  background: #10b981;
+}
+.em-label {
+  background: #10b981;
+}
+.u-label {
+  background: #f59e0b;
+}
+.mark-label {
+  background: #f59e0b;
+}
+.small-label {
+  background: #8b5cf6;
+}
+.del-label {
+  background: #ef4444;
+}
+.sup-label {
+  background: #8b5cf6;
+}
+.sub-label {
+  background: #2563eb;
+}
+
+.format-text {
+  font-size: 17px;
+  color: #374151;
+}
+
+.format-text.bold {
+  font-weight: 700;
+}
+.format-text.italic {
+  font-style: italic;
+}
+.format-text.underline {
+  text-decoration: underline;
+}
+.format-text.small-text {
+  font-size: 14px;
+  color: #597bbe;
+}
+.format-text.del-text {
+  text-decoration: line-through;
+  color: #fafbfd;
+}
+
+.mark-text {
+  background: #fde047;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.code-box {
+  background: #111827;
+  color: #e5e7eb;
+  border-radius: 14px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.code-box pre {
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 15px;
+  line-height: 1.9;
+  white-space: pre;
+}
+
+.inline-code {
+  background: #eef2ff;
+  color: #4338ca;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 15px;
+}
+
+/* ---- Card 3: activity list ---- */
+.activity-list {
+  list-style: none;
+}
+
+.activity-list li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+  font-size: 17px;
+  color: #2c79f5;
+}
+
+.activity-list li:last-child {
+  margin-bottom: 0;
+}
+
+.check {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  border-radius: 50%;
+  background: #007bff;
+  color: rgb(255, 255, 255);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+
 .tip-box {
-    flex-direction: column;
+  margin-top: 25px;
+  background: #fff7df;
+  border: 1px solid #facc15;
+  border-radius: 18px;
+  padding: 24px 30px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.tip-icon {
+  font-size: 30px;
+}
+
+.tip-content h2 {
+  font-size: 20px;
+  color: #92400e;
+  margin-bottom: 6px;
+}
+
+.tip-content p {
+  font-size: 16.5px;
+  color: #78350f;
+  line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: 1fr;
   }
 
+  header {
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px 24px;
+  }
+
+  nav {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 30px 24px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .tip-box {
+    flex-direction: column;
+  }
+}
+.html-tag {
+  color: #ff4d4f; /* สีแดง */
+  font-weight: 600;
+}
+
+.line-no {
+  color: #9ca3af; /* สีเทา */
+}
