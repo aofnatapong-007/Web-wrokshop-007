@@ -49,10 +49,139 @@
                             <img src="img/1.jpg" alt="ชินจัง"></div>
                 </section>
                 <!-- Linke Example -->
-                <article class="card"></article>
+                <article class="card">
+                    <div class="card-header-title">
+                        <span>🔗</span>
+                        <h2>ตัวอย่างลิงก์ (Link Examples)</h2>
+                    </div>
+
+                    <div class="card-body-grid">
+                        <div class="result-panel">
+                            <div class="result-panel-title">ผลลัพธ์</div>
+
+                            <div class="result-panel-body">
+                                <a href="">ไปยังเว็บไซต์มหาวิทยาลัย</a>
+                                <a href="">เปิด Google ในแท็บใหม่ ↗️</a>
+
+                                <div style="display: flex; gap: 10px;">
+                                    <span class="email-icon">📧</span>
+                                    <a href="">ส่งอีเมลถึงผู้สอน</a>
+                                </div>
+
+                                <a href="index.html" class="back-btn">🔙กลับไปหน้าแรก</a>
+                            </div>
+                        </div>
+
+                        <div class="code-panel">
+                            <div class="result-panel-title">โค้ด HTML</div>
+
+                            <div class="code-panel-body">
+                                <ol class="code-list">
+                                    <li>
+                                        <span class="tag">&lt;a</span>
+                                        <span class="attr">href</span>
+                                        =
+                                        <span class="value">"https://www.npru.ac.th"</span>
+                                        <span class="tag">&gt;</span>
+                                        เว็บไซต์มหาวิทยาลัย
+                                        <span class="tag">&lt;/a&gt;</span>
+                                    </li>
+                                    <li>
+                                        <span class="tag">&lt;a</span>
+                                        <span class="attr">href</span>
+                                        =
+                                        <span class="value">"https://www.google.com"</span>
+                                        <span class="attr">target</span>
+                                        =
+                                        <span class="value">"_blank"</span>
+                                        <span class="tag">&gt;</span>
+                                        เปิด Google ในแท็บใหม่
+                                        <span class="tag">&lt;/a&gt;</span>
+                                    </li>
+                                    <li>
+                                        <span class="tag">&lt;a</span> <span class="attr">href</span>=<span
+                                            class="value">"mailto:teacher@example.com"</span><span
+                                            class="tag">&gt;</span>ส่งอีเมล<span class="tag">&lt;/a&gt;</span>
+                                    </li>
+                                    <li>
+                                        <span class="tag">&lt;a</span> <span class="attr">href</span>=<span
+                                            class="value">"index.html"</span><span
+                                            class="tag">&gt;</span>กลับหน้าแรก<span class="tag">&lt;/a&gt;</span>
+                                    </li>
+                                </ol>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </article>
                 <!-- Image Example -->
-                <article class="card"></article>
+<article class="card">
+    <div class="card-header-title">
+        <span>🔗</span>
+        <h2>ตัวอย่างรูปภาพ (Image Examples)</h2>
+    </div>
+
+    <div class="card-body-grid">
+        <div class="result-panel">
+            <div class="result-panel-title">ผลลัพธ์</div>
+
+            <div class="result-panel-body">
+                <img src="img/2.jpg" alt="โลโก้มหาลัย" width="120">
+                <img src="img/3.jpg" alt="นักศึกษากำลังเรียน" width="120">
+                <img src="img/4.jpg" alt="โลโก้วิชา" height="120">
+                
+            </div>
+        </div>
+
+        <div class="code-panel">
+            <div class="result-panel-title">โค้ด HTML</div>
+
+            <div class="code-panel-body">
+                <ol class="code-list">
+                    <li>
+                        <span class="tag">&lt;img</span>
+                        <span class="attr">src</span>=<span class="value">"images/campus.jpg"</span>
+                        <span class="attr">alt</span>=<span class="value">"ภาพมหาวิทยาลัย"</span>
+                        <span class="attr">width</span>=<span class="value">"220"</span><span class="tag">&gt;</span>
+                    </li>
+                    <li>
+                        <span class="tag">&lt;img</span>
+                        <span class="attr">src</span>=<span class="value">"images/student.jpg"</span>
+                        <span class="attr">alt</span>=<span class="value">"นักศึกษากำลังเรียน"</span>
+                        <span class="attr">width</span>=<span class="value">"180"</span><span class="tag">&gt;</span>
+                    </li>
+                    <li>
+                        <span class="tag">&lt;img</span>
+                        <span class="attr">src</span>=<span class="value">"images/logo.png"</span>
+                        <span class="attr">alt</span>=<span class="value">"โลโก้วิชา"</span>
+                        <span class="attr">height</span>=<span class="value">"80"</span><span class="tag">&gt;</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</article>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </article>
             </section>
+            <script>
+    document.querySelectorAll('.result-panel-body img').forEach(img => {
+        img.addEventListener('click', () => {
+            img.classList.add('img-bounce');
+            
+            // ลบคลาสออกเมื่อเล่นแอนิเมชันจบ เพื่อให้กดขยับซ้ำกี่ครั้งก็ได้
+            setTimeout(() => {
+                img.classList.remove('img-bounce');
+            }, 500);
+        });
+    });
+</script>
             <section class="right-sidebar">Sidebar</section>
         </main>
         <footer class="tip-box">tip-box</footer>
