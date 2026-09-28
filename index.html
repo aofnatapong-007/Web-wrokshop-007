@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,22 @@
     <title>Web Work Shop : 684259007</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700;800&display=swap"
+        rel="stylesheet">
     <style>
-        :root{
+        :root {
             --bg: #f4f1fb;
             --surface: #ffffff;
             --text: #201b3d;
             --text-soft: #6b6489;
             --border: #e3ddf6;
-            --tag: #7c3aed;      /* หลอด HTML tag */
-            --attr: #0891b2;     /* หลอด attribute */
-            --str: #16a34a;      /* หลอด string */
+            --tag: #7c3aed;
+            /* หลอด HTML tag */
+            --attr: #0891b2;
+            /* หลอด attribute */
+            --str: #16a34a;
+            /* หลอด string */
             --accent: #f472b6;
             --accent-2: #38bdf8;
             --editor-bg: #17162b;
@@ -26,13 +32,17 @@
             --font-mono: 'JetBrains Mono', 'Consolas', monospace;
         }
 
-        *{ box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
-        html{
+        html {
             scroll-behavior: smooth;
         }
 
-        [id]{ scroll-margin-top: 84px; }
+        [id] {
+            scroll-margin-top: 84px;
+        }
 
         body {
             font-family: var(--font-body);
@@ -41,28 +51,28 @@
             color: var(--text);
             background-color: var(--bg);
             background-image:
-                radial-gradient(circle at 8% 0%, rgba(124,58,237,0.10), transparent 45%),
-                radial-gradient(circle at 100% 10%, rgba(56,189,248,0.10), transparent 40%);
+                radial-gradient(circle at 8% 0%, rgba(124, 58, 237, 0.10), transparent 45%),
+                radial-gradient(circle at 100% 10%, rgba(56, 189, 248, 0.10), transparent 40%);
             line-height: 1.75;
         }
 
-        .container{
+        .container {
             max-width: 860px;
             margin: 0 auto;
             padding: 28px 20px 60px;
         }
 
-        header{
+        header {
             position: sticky;
             top: 0;
             z-index: 50;
-            background: rgba(244,241,251,0.88);
+            background: rgba(244, 241, 251, 0.88);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-bottom: 1px solid var(--border);
         }
 
-        header p{
+        header p {
             margin: 0;
             max-width: 860px;
             margin: 0 auto;
@@ -78,7 +88,7 @@
             color: var(--text);
         }
 
-        header nav a{
+        header nav a {
             font-family: var(--font-body);
             font-weight: 600;
             font-size: 0.82rem;
@@ -86,22 +96,24 @@
             background: linear-gradient(135deg, var(--tag), var(--accent-2));
             padding: 6px 16px;
             border-radius: 999px;
-            box-shadow: 0 2px 8px rgba(124,58,237,0.25);
+            box-shadow: 0 2px 8px rgba(124, 58, 237, 0.25);
         }
 
-        header nav a:hover{
+        header nav a:hover {
             text-decoration: none;
             color: #fff;
             filter: brightness(1.08);
         }
 
-        h1, h2, h3{
+        h1,
+        h2,
+        h3 {
             font-family: var(--font-mono);
             color: var(--text);
             letter-spacing: -0.01em;
         }
 
-        h1{
+        h1 {
             font-size: clamp(1.7rem, 4vw, 2.3rem);
             margin: 0 0 10px;
             background: linear-gradient(120deg, var(--tag), var(--accent-2));
@@ -110,21 +122,21 @@
             color: transparent;
         }
 
-        h2{
+        h2 {
             font-size: 1.25rem;
         }
 
         /* ----- hero (looks like a little browser window) ----- */
-        .hero{
+        .hero {
             margin-top: 26px;
             border: 1px solid var(--border);
             border-radius: 14px;
             overflow: hidden;
             background: var(--surface);
-            box-shadow: 0 10px 30px rgba(124,58,237,0.10);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.10);
         }
 
-        .browser-bar{
+        .browser-bar {
             display: flex;
             align-items: center;
             gap: 8px;
@@ -133,18 +145,26 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .browser-bar .dot{
+        .browser-bar .dot {
             width: 10px;
             height: 10px;
             border-radius: 50%;
             background: #d7d3c8;
         }
 
-        .browser-bar .dot:nth-child(1){ background: #f87171; }
-        .browser-bar .dot:nth-child(2){ background: #fbbf24; }
-        .browser-bar .dot:nth-child(3){ background: #34d399; }
+        .browser-bar .dot:nth-child(1) {
+            background: #f87171;
+        }
 
-        .browser-bar .url{
+        .browser-bar .dot:nth-child(2) {
+            background: #fbbf24;
+        }
+
+        .browser-bar .dot:nth-child(3) {
+            background: #34d399;
+        }
+
+        .browser-bar .url {
             margin-left: 8px;
             font-family: var(--font-mono);
             font-size: 0.75rem;
@@ -155,25 +175,25 @@
             padding: 3px 10px;
         }
 
-        .hero-content{
+        .hero-content {
             padding: 26px 28px 30px;
         }
 
-        .hero-content p{
+        .hero-content p {
             margin: 0;
             color: var(--text-soft);
         }
 
         /* ----- table of contents ----- */
-        .toc{
+        .toc {
             margin-top: 30px;
         }
 
-        .toc h2{
+        .toc h2 {
             margin: 0 0 14px;
         }
 
-        .toc-grid{
+        .toc-grid {
             list-style: none;
             margin: 0;
             padding: 0;
@@ -183,11 +203,11 @@
             gap: 10px;
         }
 
-        .toc-grid li{
+        .toc-grid li {
             counter-increment: topic;
         }
 
-        .toc-grid a{
+        .toc-grid a {
             display: flex;
             align-items: baseline;
             gap: 8px;
@@ -200,7 +220,7 @@
             transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
         }
 
-        .toc-grid a::before{
+        .toc-grid a::before {
             content: counter(topic, decimal-leading-zero);
             font-family: var(--font-mono);
             font-weight: 700;
@@ -209,26 +229,28 @@
             flex-shrink: 0;
         }
 
-        .toc-grid a:hover{
+        .toc-grid a:hover {
             text-decoration: none;
             border-color: var(--tag);
             color: var(--tag);
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(124,58,237,0.15);
+            box-shadow: 0 6px 16px rgba(124, 58, 237, 0.15);
         }
 
-        hr{ display: none; }
+        hr {
+            display: none;
+        }
 
-        section{
+        section {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 26px 28px 24px;
             margin: 22px 0;
-            box-shadow: 0 1px 2px rgba(32,27,61,0.04);
+            box-shadow: 0 1px 2px rgba(32, 27, 61, 0.04);
         }
 
-        section h2{
+        section h2 {
             display: flex;
             align-items: center;
             gap: 10px;
@@ -237,22 +259,22 @@
             border-bottom: 2px solid var(--bg);
         }
 
-        section h2::before{
+        section h2::before {
             content: "<>";
             color: var(--tag);
             font-weight: 800;
         }
 
-        section p{
+        section p {
             margin: 0 0 12px;
         }
 
-        section p a{
+        section p a {
             color: var(--attr);
             font-weight: 600;
         }
 
-        section p a:hover{
+        section p a:hover {
             color: var(--tag);
         }
 
@@ -270,23 +292,23 @@
             overflow-x: auto;
         }
 
-        pre::before{
+        pre::before {
             content: "\25CF  \25CF  \25CF";
             position: absolute;
             top: 12px;
             left: 16px;
             letter-spacing: 4px;
             font-size: 0.65rem;
-            color: rgba(255,255,255,0.25);
+            color: rgba(255, 255, 255, 0.25);
         }
 
-        pre::after{
+        pre::after {
             content: ".html";
             position: absolute;
             top: 13px;
             right: 16px;
             font-size: 0.65rem;
-            color: rgba(255,255,255,0.3);
+            color: rgba(255, 255, 255, 0.3);
         }
 
         a {
@@ -299,7 +321,7 @@
             color: var(--tag);
         }
 
-        a[href="#top"]{
+        a[href="#top"] {
             display: inline-flex;
             align-items: center;
             gap: 4px;
@@ -313,19 +335,21 @@
             padding: 4px 12px;
         }
 
-        a[href="#top"]::before{ content: "\2191"; }
+        a[href="#top"]::before {
+            content: "\2191";
+        }
 
-        a[href="#top"]:hover{
+        a[href="#top"]:hover {
             text-decoration: none;
             color: var(--tag);
             border-color: var(--tag);
         }
 
-        section ul{
+        section ul {
             padding-left: 20px;
         }
 
-        section ul li{
+        section ul li {
             margin-bottom: 4px;
         }
 
@@ -333,61 +357,65 @@
             text-align: center;
         }
 
-        footer{
+        footer {
             color: var(--text-soft);
             font-size: 0.85rem;
         }
 
-        footer p{ margin: 6px 0 0; }
+        footer p {
+            margin: 6px 0 0;
+        }
     </style>
 </head>
+
 <body>
- <header>
-    <p>เรียนรู้เว็บเบื้องต้น
+    <header>
+        <p>เรียนรู้เว็บเบื้องต้น
         <nav>
             <a href="index.html">Home</a>
         </nav>
-    </p>
- </header>
-<main class="container">
+        </p>
+    </header>
+    <main class="container">
 
-<div class="hero">
-    <div class="browser-bar">
-        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-        <span class="url">file:///html-tutorial.html</span>
-    </div>
-    <div class="hero-content">
-        <h1 id="top">HTML Tutorial</h1>
-        <p>Welcome to the HTML tutorial. Click on the topics below to start learning:</p>
-    </div>
-</div>
+        <div class="hero">
+            <div class="browser-bar">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <span class="url">file:///html-tutorial.html</span>
+            </div>
+            <div class="hero-content">
+                <h1 id="top">HTML Tutorial</h1>
+                <p>Welcome to the HTML tutorial. Click on the topics below to start learning:</p>
+            </div>
+        </div>
 
-<div class="toc">
-<h2>Topics</h2>
-<ul class="toc-grid">
-    <li><a href="#introduction">Introduction to HTML</a></li>
-    <li><a href="#document-structure">HTML Document Structure</a></li>
-    <li><a href="#heading">Heading</a></li>
-    <li><a href="#paragraph">Paragraph</a></li>
-    <li><a href="#text-formatting">Text Formatting</a></li>
-    <li><a href="#creating-links">Creating Links</a></li>
-    <li><a href="#lists">Lists (Ordered and Unordered)</a></li>
-    <li><a href="#adding-images">Adding Images</a></li>
-    <li><a href="#creating-tables">Creating Tables</a></li>
-    <li><a href="#html-forms">HTML Forms</a></li>
-    <li><a href="#multimedia">Embedding Multimedia (Audio &amp; Video)</a></li>
-    <li><a href="#semantic">Semantic HTML</a></li>
-    <li><a href="pets01/index.html">โปรเจ็กสัตว์เลี้ยง [01]</a></li>
-    <li><a href="pets02/index.html">โปรเจ็กสัตว์เลี้ยง [02]</a></li>
-</ul>
-</div>
+        <div class="toc">
+            <h2>Topics</h2>
+            <ul class="toc-grid">
+                <li><a href="#introduction">Introduction to HTML</a></li>
+                <li><a href="#document-structure">HTML Document Structure</a></li>
+                <li><a href="#heading">Heading</a></li>
+                <li><a href="#paragraph">Paragraph</a></li>
+                <li><a href="#text-formatting">Text Formatting</a></li>
+                <li><a href="#creating-links">Creating Links</a></li>
+                <li><a href="#lists">Lists (Ordered and Unordered)</a></li>
+                <li><a href="#adding-images">Adding Images</a></li>
+                <li><a href="#creating-tables">Creating Tables</a></li>
+                <li><a href="#html-forms">HTML Forms</a></li>
+                <li><a href="#multimedia">Embedding Multimedia (Audio &amp; Video)</a></li>
+                <li><a href="#semantic">Semantic HTML</a></li>
+                <li><a href="pets01/index.html">โปรเจ็กสัตว์เลี้ยง [01]</a></li>
+                <li><a href="pets02/index.html">โปรเจ็กสัตว์เลี้ยง [02]</a></li>
+                <li><a href="pets03/index.html">โปรเจ็กสัตว์เลี้ยง [03]</a></li>
+            </ul>
+        </div>
 
-<hr>
+        <hr>
 
-<!-- Introduction to HTML -->
-<section>
-    <h2 id="introduction">Introduction to HTML</h2>
-    <pre>
+        <!-- Introduction to HTML -->
+        <section>
+            <h2 id="introduction">Introduction to HTML</h2>
+            <pre>
     - HTML stands for Hyper Text Markup Language
     - HTML is the standard markup language for creating Web pages
     - HTML describes the structure of a Web page
@@ -399,16 +427,16 @@
     - HTML can embed programs written in a scripting language such as JavaScript, which affects the behavior and content of web pages
     - HTML is not a programming language, but a markup language
     </pre>
-    <a href="#top">TOP</a>
-</section>
+            <a href="#top">TOP</a>
+        </section>
 
-<hr>
+        <hr>
 
-<!-- HTML Document Structure -->
-<section>
-    <h2 id="document-structure">HTML Document Structure</h2>
-    <p>An HTML document has the following basic structure...</p>
-    <pre>
+        <!-- HTML Document Structure -->
+        <section>
+            <h2 id="document-structure">HTML Document Structure</h2>
+            <p>An HTML document has the following basic structure...</p>
+            <pre>
         คำอธิบาย:
         &lt;!DOCTYPE html&gt;: ระบุว่าเป็นเอกสาร HTML5
         &lt;html&gt;: เป็นรากของเอกสาร HTML ทั้งหมด
@@ -424,17 +452,17 @@
         ตัวอย่าง: &lt;h1&gt;Hello, World!&lt;/h1&gt;
                   &lt;img src="image.jpg" alt="A description of the image"&gt;
     </pre>
-    <a href="#top">TOP</a>
-</section>
+            <a href="#top">TOP</a>
+        </section>
 
-<hr>
+        <hr>
 
-<!-- Heading -->
-<section>
-    <h2 id="heading">Heading</h2>
-    <p>HTML headings are defined with the &lt;h1&gt; to &lt;h6&gt; tags...</p>
-    <p><a href="W03-heading.html">workshop</a></p>
-    <pre>
+        <!-- Heading -->
+        <section>
+            <h2 id="heading">Heading</h2>
+            <p>HTML headings are defined with the &lt;h1&gt; to &lt;h6&gt; tags...</p>
+            <p><a href="W03-heading.html">workshop</a></p>
+            <pre>
     - &lt;h1&gt;: Heading 1
     - &lt;h2&gt;: Heading 2
     - &lt;h3&gt;: Heading 3
@@ -442,30 +470,30 @@
     - &lt;h5&gt;: Heading 5
     - &lt;h6&gt;: Heading 6
     </pre>
-    <a href="#top">TOP</a>
-</section>
+            <a href="#top">TOP</a>
+        </section>
 
-<hr>
+        <hr>
 
-<!-- Paragraph -->
-<section>
-    <h2 id="paragraph">Paragraph</h2>
-    <p>workshop</p>
-    <p>HTML paragraphs are defined with the &lt;p&gt; tag...</p>
-    <pre>
+        <!-- Paragraph -->
+        <section>
+            <h2 id="paragraph">Paragraph</h2>
+            <p>workshop</p>
+            <p>HTML paragraphs are defined with the &lt;p&gt; tag...</p>
+            <pre>
      - &lt;p&gt;: Paragraph
     </pre>
-    <a href="#top">TOP</a>
-</section>
+            <a href="#top">TOP</a>
+        </section>
 
-<hr>
+        <hr>
 
-<!-- Text Formatting -->
-<section>
-    <h2 id="text-formatting">Text Formatting</h2>
-    <p>workshop</p>
-    <p>HTML provides various elements to format text...</p>
-    <pre>
+        <!-- Text Formatting -->
+        <section>
+            <h2 id="text-formatting">Text Formatting</h2>
+            <p>workshop</p>
+            <p>HTML provides various elements to format text...</p>
+            <pre>
     - &lt;h1&gt; to &lt;h6&gt;: Headings
     - &lt;p&gt;: Paragraph
     - &lt;pre&gt;: Preformatted text
@@ -488,17 +516,17 @@
     - &lt;q&gt;: Inline quotation
     - &lt;code&gt;: Code snippet
     </pre>
-    <a href="#top">TOP</a>
-</section>
+            <a href="#top">TOP</a>
+        </section>
 
-<hr>
+        <hr>
 
-<!-- Creating Links -->
-<section>
-    <h2 id="creating-links">Creating Links</h2>
-    <p>workshop</p>
-    <p>HTML links are defined with the &lt;a&gt; tag...</p>
-    <pre>
+        <!-- Creating Links -->
+        <section>
+            <h2 id="creating-links">Creating Links</h2>
+            <p>workshop</p>
+            <p>HTML links are defined with the &lt;a&gt; tag...</p>
+            <pre>
         - &lt;a href="url" target=""&gt;Link text&lt;/a&gt;
         - The href attribute specifies the URL of the page the link goes to
         - The target attribute specifies where to open the linked document
@@ -519,17 +547,17 @@
             - Use the download attribute to create a download link
             - Example: &lt;a href="file.txt" download&gt;Download Text File&lt;/a&gt;
     </pre>
-    <a href="#top">TOP</a>
-</section>
+            <a href="#top">TOP</a>
+        </section>
 
-<hr>
+        <hr>
 
-<!-- Lists -->
-<section>
-    <h2 id="lists">Lists (Ordered and Unordered)</h2>
-    <p>workshop</p>
-    <p>HTML lists are defined with the &lt;ul&gt;, &lt;ol&gt;, and &lt;li&gt; tags...</p>
-    <pre>
+        <!-- Lists -->
+        <section>
+            <h2 id="lists">Lists (Ordered and Unordered)</h2>
+            <p>workshop</p>
+            <p>HTML lists are defined with the &lt;ul&gt;, &lt;ol&gt;, and &lt;li&gt; tags...</p>
+            <pre>
     - &lt;ul&gt;: Unordered list
     - &lt;ol&gt;: Ordered list
     - &lt;li&gt;: List item
@@ -570,17 +598,17 @@
         - Example: &lt;ol style="list-style-type: upper-roman;"&gt;
         - Example: &lt;ol style="list-style-type: lower-roman;"&gt;
     </pre>
-    <a href="#top">TOP</a>
-</section>
+            <a href="#top">TOP</a>
+        </section>
 
-<hr>
+        <hr>
 
-<!-- Adding Images -->
-<section>
-    <h2 id="adding-images">Adding Images</h2>
-    <p>workshop</p>
-    <p>HTML images are defined with the &lt;img&gt; tag...</p>
-    <pre>
+        <!-- Adding Images -->
+        <section>
+            <h2 id="adding-images">Adding Images</h2>
+            <p>workshop</p>
+            <p>HTML images are defined with the &lt;img&gt; tag...</p>
+            <pre>
         - &lt;img src="url" alt="description"&gt;
         - The src attribute specifies the URL of the image
         - The alt attribute provides a description of the image
@@ -620,33 +648,33 @@
                     object-fit: cover;
                 }
     </pre>
-    <a href="#top">TOP</a>
-</section>
+            <a href="#top">TOP</a>
+        </section>
 
-<hr>
+        <hr>
 
-<!-- Creating Tables -->
-<section>
-    <h2 id="creating-tables">Creating Tables</h2>
-    <p><a href="#">Workshop 1</a> <a href="#">Workshop 2</a></p>
-    <p>HTML tables are defined with the &lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, and &lt;td&gt; tags...</p>
-    <pre>
+        <!-- Creating Tables -->
+        <section>
+            <h2 id="creating-tables">Creating Tables</h2>
+            <p><a href="#">Workshop 1</a> <a href="#">Workshop 2</a></p>
+            <p>HTML tables are defined with the &lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, and &lt;td&gt; tags...</p>
+            <pre>
         - &lt;table&gt;: Table
         - &lt;tr&gt;: Table row
         - &lt;th&gt;: Table header
         - &lt;td&gt;: Table data/cell
     </pre>
-    <a href="#top">TOP</a>
-</section>
+            <a href="#top">TOP</a>
+        </section>
 
-<hr>
+        <hr>
 
-<!-- HTML Forms -->
-<section>
-    <h2 id="html-forms">HTML Forms</h2>
-    <p><a href="#">Workshop 1</a> <a href="#">Workshop 2</a></p>
-    <p>HTML forms are defined with the &lt;form&gt; tag...</p>
-    <pre>
+        <!-- HTML Forms -->
+        <section>
+            <h2 id="html-forms">HTML Forms</h2>
+            <p><a href="#">Workshop 1</a> <a href="#">Workshop 2</a></p>
+            <p>HTML forms are defined with the &lt;form&gt; tag...</p>
+            <pre>
         หัวข้อเกี่ยวกับฟอร์ม
 
         1. โครงสร้างพื้นฐานของฟอร์ม
@@ -685,17 +713,17 @@
             - การส่งข้อมูลไปยังเซิร์ฟเวอร์
             - การใช้ JavaScript (เช่น onsubmit)
     </pre>
-    <a href="#top">TOP</a>
-</section>
+            <a href="#top">TOP</a>
+        </section>
 
-<hr>
+        <hr>
 
-<!-- Embedding Multimedia -->
-<section>
-    <h2 id="multimedia">Embedding Multimedia (Audio &amp; Video)</h2>
-    <p>workshop</p>
-    <p>HTML multimedia elements allow you to embed audio and video...</p>
-    <pre>
+        <!-- Embedding Multimedia -->
+        <section>
+            <h2 id="multimedia">Embedding Multimedia (Audio &amp; Video)</h2>
+            <p>workshop</p>
+            <p>HTML multimedia elements allow you to embed audio and video...</p>
+            <pre>
         - &lt;video&gt;: Defines a video
         - &lt;audio&gt;: Defines an audio
         - &lt;source&gt;: Defines multiple media resources for video and audio
@@ -705,16 +733,16 @@
                 &lt;source src="movie.mp4" type="video/mp4"&gt;
             &lt;/video&gt;
     </pre>
-    <a href="#top">TOP</a>
-</section>
+            <a href="#top">TOP</a>
+        </section>
 
-<hr>
+        <hr>
 
-<!-- Semantic HTML -->
-<section>
-    <h2 id="semantic">Semantic HTML</h2>
-    <p>Semantic HTML elements clearly define the content of a web page...</p>
-    <pre>
+        <!-- Semantic HTML -->
+        <section>
+            <h2 id="semantic">Semantic HTML</h2>
+            <p>Semantic HTML elements clearly define the content of a web page...</p>
+            <pre>
         - &lt;header&gt;: Defines a header for a document or section
         - &lt;nav&gt;: Defines navigation links
         - &lt;section&gt;: Defines a section in a document
@@ -722,28 +750,29 @@
         - &lt;aside&gt;: Defines content aside from the page content
         - &lt;footer&gt;: Defines a footer for a document or section
     </pre>
-    <a href="#top">TOP</a>
-</section>
+            <a href="#top">TOP</a>
+        </section>
 
-<hr>
+        <hr>
 
-<!-- My Workshop -->
-<section>
-    <h2 id="workshop">My Workshop</h2>
-    <ul>
-        <li><a href="#">workshop 01 : rabbit</a></li>
-        <li><a href="#">workshop 02 : Login</a></li>
-    </ul>
-    <a href="#top">TOP</a>
-    <hr>
-<div class="text-center">
-        <a href="https://www.w3schools.com/">Learn more about HTML</a>
-        <footer>
-            <p>&copy; 2026 HTML Tutorial by natapong</p>
-        </footer>
-    </div>
+        <!-- My Workshop -->
+        <section>
+            <h2 id="workshop">My Workshop</h2>
+            <ul>
+                <li><a href="#">workshop 01 : rabbit</a></li>
+                <li><a href="#">workshop 02 : Login</a></li>
+            </ul>
+            <a href="#top">TOP</a>
+            <hr>
+            <div class="text-center">
+                <a href="https://www.w3schools.com/">Learn more about HTML</a>
+                <footer>
+                    <p>&copy; 2026 HTML Tutorial by natapong</p>
+                </footer>
+            </div>
 
-</section>
-</main>
+        </section>
+    </main>
 </body>
+
 </html>
