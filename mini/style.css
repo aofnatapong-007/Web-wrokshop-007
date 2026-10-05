@@ -1,0 +1,416 @@
+/* Reset ค่า CSS พื้นฐาน */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 1. ตัวแปรสีและค่าต่างๆ */
+:root {
+    --primary-color: #2563eb;
+    --primary-dark-color: #1d4ed8;
+    --secondary-color: #7c3aed;
+    
+    --mute-text-color: #64748b;
+    --nav-text-color: #292727;
+    --light-text-color: #ffffff;
+    --dark-text-color: #0f172a;
+    --green-text-clor: #16a34a;
+
+    --header-bg-color: rgba(255, 255, 255, 0.89);
+    --light-bg-color: #ffffff;
+    --footer-bg-color: #0f172a;
+    --btn-bg-gray-color: rgba(219, 218, 218, 0.637);
+
+    --header-shadow: 0 4px 6px rgba(112, 112, 112, 0.2);
+    --card-shadow: 0 3px 6px rgba(112, 112, 112, 0.3);
+
+    --border-color: rgb(112, 112, 112);
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Prompt', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f8fafc;
+    color: var(--dark-text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* 2. Container */
+.container {
+    max-width: 1280px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* 3. Header & Nav Header */
+.header {
+    background-color: var(--header-bg-color);
+    box-shadow: var(--header-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1.2rem;
+}
+
+.header-title {
+    color: var(--primary-color);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--nav-text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+    padding-bottom: 4px;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* 4. Hero Section */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-block: 4rem;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h3 {
+    font-size: 1.5rem;
+    color: var(--mute-text-color);
+    margin-bottom: 0.5rem;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--dark-text-color);
+    margin-bottom: 1rem;
+}
+
+.hero-content h1 span {
+    color: var(--primary-color);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--mute-text-color);
+    margin-bottom: 2rem;
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    box-shadow: var(--card-shadow);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark-color);
+    transform: translateY(-4px);
+}
+
+.btn-outline {
+    border: 2px solid var(--border-color);
+    color: var(--dark-text-color);
+    background: var(--light-bg-color);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-4px);
+}
+
+.hero-image img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: var(--card-shadow);
+    border: 5px solid var(--light-bg-color);
+}
+
+/* 5. Section Titles */
+section {
+    padding-block: 3rem;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--dark-text-color);
+    margin-bottom: 2.5rem;
+}
+
+/* 6. Info Section */
+.info-section {
+    background-color: var(--light-bg-color);
+    box-shadow: var(--card-shadow);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.info-section h4 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.info-section p {
+    color: var(--dark-text-color);
+    margin-bottom: 1rem;
+}
+
+/* 7. Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background-color: var(--light-bg-color);
+    box-shadow: var(--card-shadow);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    transition: transform 0.25s;
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+}
+
+.skill-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+/* 8. Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background-color: var(--light-bg-color);
+    box-shadow: var(--card-shadow);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: transform 0.25s;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+}
+
+.project-card img {
+    height: 16.25rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 1.25rem;
+}
+
+.project-content h4 {
+    color: var(--primary-dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.project-content p {
+    color: var(--mute-text-color);
+    margin-bottom: 0.75rem;
+}
+
+/* Details Animation */
+.pet-details summary {
+    list-style: none;
+}
+
+.pet-btn {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-block: 0.75rem;
+    cursor: pointer;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.pet-btn:hover {
+    background-color: var(--green-text-clor);
+    transform: translateY(-2px);
+}
+
+.hide-detail { display: none; }
+.pet-details[open] .show-detail { display: none; }
+.pet-details[open] .hide-detail { display: inline; }
+
+.pet-details-body {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    animation: appear 0.5s ease-out;
+}
+
+.pet-details-body ul {
+    margin-left: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 9. Contact Form & Section */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+    gap: 2rem;
+}
+
+.contact-section {
+    background-color: var(--light-bg-color);
+    box-shadow: var(--card-shadow);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-family: inherit;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--btn-bg-gray-color);
+    color: var(--primary-color);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.social-icons a:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    transform: translateY(-4px);
+}
+
+/* 10. Footer */
+footer {
+    padding: 2rem;
+    background-color: var(--footer-bg-color);
+    color: var(--light-text-color);
+    margin-top: 3rem;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btn-group {
+        justify-content: center;
+    }
+}

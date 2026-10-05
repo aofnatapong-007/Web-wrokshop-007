@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>684259007</title>
+
+    <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --primary: #0b7a7c;
+    --primary-soft: #d5eeee;
+    --dark-bg: #0c3761af;
+    --light-bg: #f3f7f8;
+    --text-dark: #12263a;
+    --text-muted: #4a5f70;
+    --white: #ffffff;
+    --border: #c5d3da;
+    --accent: #f59e0b;
+    --shadow: 0 4px 6px -1px rgba(18, 38, 58, 0.12);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-bg);
+    padding: 1rem 5%;
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: none;  /* ลบเส้นขอบล่างออก */
+}
+
+.logo { font-size: 1.4rem; font-weight: bold; color: #ee8711f3; }
+
+.nav-links { display: flex; list-style: none; gap: 1.5rem; }
+.nav-links a { text-decoration: none; color: var(--white); }
+.nav-links a:hover { color: var(--accent); }
+
+/* Hero Section */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.hero-content h1 { font-size: 2.2rem; margin-bottom: 1rem; }
+.hero-content p { margin-bottom: 1.5rem; color: var(--text-muted); }
+
+.hero-image { display: flex; justify-content: center; align-items: center; }
+.hero-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary);
+    box-shadow: 0 10px 25px -5px rgba(11, 122, 124, 0.35);
+}
+
+/* Radio options */
+.radio-option {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.radio-item input { accent-color: var(--primary); }
+
+.radio-item label {
+    padding: 0.65rem 1.2rem;
+    margin: 0.3rem;
+    color: var(--text-dark);
+    background-color: var(--primary-soft);
+    border-radius: 60px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.2s;
+    display: inline-block;
+}
+
+.radio-item label:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px var(--border);
+}
+
+.radio-item input:checked + label {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+.btn-primary:hover { background-color: #095f61; }
+
+.btn-block-mobile {
+    display: inline-block;
+    background-color: #5b7083;
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+
+/* Card Section */
+.card-section h2 {
+    text-align: left; /* เปลี่ยนจาก center เป็น left */
+    margin-bottom: 2rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.card img { width: 100%; height: 180px; object-fit: cover; }
+.card-body { padding: 1.25rem; }
+.card-body p { color: var(--text-muted); }
+
+.html, .css, .ux { text-align: center; height: 140px; }
+.html h1, .css h1, .ux h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-top: 40px;
+}
+
+.html { background-color: #fde7c0; color: #9a5b00; }
+.css  { background-color: #c9ece8; color: #0b6b66; }
+.ux   { background-color: #e3dcfa; color: #5b3fb5; }
+
+/* Form Section */
+.form-section {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary);
+}
+
+.form-section h2 { text-align: center; margin-bottom: 1.5rem; }
+
+.form-row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+.input-group { margin-bottom: 1.25rem; }
+.input-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+.input-group input:focus {
+    outline: 2px solid var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-submit:hover { background-color: #095f61; }
+
+/* Footer */
+footer {
+    padding-block: 2rem;
+    background-color: var(--dark-bg);
+    color: var(--white);
+    margin-top: 1.5rem;
+    text-align: center;
+    border-bottom: none;  /* ลบเส้นขอบล่างออก */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 1rem; }
+    .hero-section { grid-template-columns: 1fr; text-align: center; }
+    .hero-image img { width: 240px; height: 240px; }
+    .btn-block-mobile { display: block; width: 100%; margin: 0.5rem 0 0 0; }
+    .btn-primary { display: block; width: 100%; }
+    .form-row-2col { grid-template-columns: 1fr; }
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">SE042: Learning Hub</div>
+        <ul class="nav-links">
+            <li><a href="#">หน้าแรก</a></li>
+            <li><a href="#class">หลักสูตร</a></li>
+            <li><a href="#footer">ติดต่อเรา</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>เริ่มต้นสรา้งเว็บไซต์ <br> ในแบบของคุณ</h1>
+                <p>เรียนรู้การออกแบบและพัฒนาเว็บไซต์ผ่านการลงมือทำ พร้อมพัฒนาทักษะที่ใช้ต่อยอดในโครงงานของคุณ</p>
+
+                <a href="#class" class="btn-primary">ดูหลักสูตรทั้งหมด</a>
+            </div>
+            <div class="form-section">
+                <form action="#" method="POST">
+
+                    <div class="form-row-2col">
+                        <div class="input-group">
+                            <label for="sender-name">ชื่อ-นามสกุล</label>
+                            <input type="text" id="sender-name" placeholder="ชื่อของคุณ" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="sender-email">อีเมล:</label>
+                            <input type="email" id="sender-email" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+                    <div class="radio-option">
+                        <div class="radio-item">
+                            <input type="radio" id="forvorite-dog" name="forvorite-pet" value="dog" checked>
+                            <label for="forvorite-dog">HTML</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="forvorite-cat" name="forvorite-pet" value="cat">
+                            <label for="forvorite-cat">WEB</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="forvorite-bird" name="forvorite-pet" value="bird">
+                            <label for="forvorite-bird">HTML</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit">ส่งข้อมูล </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Skill & Project Cards -->
+        <section id="class" class="card-section">
+            <h2>หลักสูตรแนะนำ</h2>
+            <div class="card-grid">
+
+                <article class="card">
+                    <div class="html">
+                        <h1>&lt;HTML&gt;</h1>
+                    </div>
+                    <div class="card-body">
+                        <h3> HTML </h3>
+                        <p>HTML for beginners</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="css">
+                        <h1>{ css }</h1>
+                    </div>
+                    <div class="card-body">
+                        <h3>CSS</h3>
+                        <p>Responsive Web Design</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="ux">
+                        <h1>UI / UX</h1>
+                    </div>
+                    <div class="card-body">
+                        <h3>UI/UX</h3>
+                        <p>UI Design Essentials</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer">
+        <p>&copy; 2026 SE042: Learning Hub <br> ณฐพงศ์ เฮงสว่าง
+        </p>
+    </footer>
+
+</body>
+
+</html>
