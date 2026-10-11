@@ -2,439 +2,439 @@
    RESET ค่า CSS พื้นฐาน
    ================================================---------- */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    box-sizing: border-box; /* บังคับให้การคำนวณความกว้าง/สูง รวม padding และ border เข้าไปด้วย ไม่ให้กล่องขยายเกินจริง */
+    margin: 0;              /* ลบช่องว่างรอบนอก (Margin) ของทุกแท็กเริ่มต้นออก */
+    padding: 0;             /* ลบช่องว่างด้านใน (Padding) ของทุกแท็กเริ่มต้นออก */
 }
 
 /* ==========================================================
-   1. ตัวแปรสีและค่าต่างๆ (CSS Variables)
+   1. ตัวแปรสีและค่าต่างๆ (CSS Variables) rootมีชื่อเรียกเต็มว่าPseudo-class (พูเซโดคลาส) 
    ================================================---------- */
-:root {
-    --primary-color: #2563eb;
-    --primary-dark-color: #1d4ed8;
-    --secondary-color: #7c3aed;
+:root {   
+    --primary-color: #2563eb;       
+    --primary-dark-color: #1d4ed8;  
+    --secondary-color: #7c3aed;     
     
-    --mute-text-color: #64748b;
-    --nav-text-color: #292727;
-    --light-text-color: #ffffff;
-    --dark-text-color: #0f172a;
-    --green-text-clor: #16a34a;
+    --mute-text-color: #64748b;     
+    --nav-text-color: #292727;      
+    --light-text-color: #ffffff;    
+    --dark-text-color: #0f172a;     
+    --green-text-clor: #16a34a;     
 
-    --header-bg-color: rgba(255, 255, 255, 0.89);
-    --light-bg-color: #ffffff;
-    --footer-bg-color: #0f172a;
+    --header-bg-color: rgba(255, 255, 255, 0.89); 
+    --light-bg-color: #ffffff;                      
+    --footer-bg-color: #0f172a;                     
     --btn-bg-gray-color: rgba(219, 218, 218, 0.637);
 
-    --header-shadow: 0 4px 6px rgba(112, 112, 112, 0.2);
-    --card-shadow: 0 3px 6px rgba(112, 112, 112, 0.3);
+    --header-shadow: 0 4px 6px rgba(112, 112, 112, 0.2); 
+    --card-shadow: 0 3px 6px rgba(112, 112, 112, 0.3);   
 
-    --border-color: rgb(112, 112, 112);
+    --border-color: rgb(112, 112, 112); 
 }
 
 html {
-    scroll-behavior: smooth;
-    font-size: 16px;
+    scroll-behavior: smooth; /* ทำให้เวลาคลิกลิงก์ภายในหน้า (Anchor) เลื่อนหน้าจอลงไปอย่างนุ่มนวล */
+    font-size: 16px;         /* กำหนดขนาดตัวอักษรพื้นฐานเท่ากับ 16 พิกเซล */
 }
 
 body {
-    font-family: 'Prompt', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: #f8fafc;
-    color: var(--dark-text-color);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    font-family: 'Prompt', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* กำหนดฟอนต์หลักของเว็บ */
+    line-height: 1.6;                                                        /* กำหนดความสูงของบรรทัดให้อ่านง่าย */
+    background-color: #f8fafc;                                               /* สีพื้นหลังภาพรวมของเว็บไซต์ (เทาอ่อน) */
+    color: var(--dark-text-color);                                           /* สีตัวหนังสือหลัก */
+    display: flex;                                                           /* ใช้ Flexbox จัดเรียงโครงสร้างหน้าเว็บ */
+    flex-direction: column;                                                  /* เรียงเนื้อหาจากบนลงล่าง */
+    min-height: 100vh;                                                       /* กำหนดความสูงขั้นต่ำเต็มหน้าจอ (100% Viewport Height) */
 }
 
 main {
-    flex: 1;
+    flex: 1; /* ดันพื้นที่ส่วนเนื้อหาหลักให้ยืดขยายเต็มพื้นที่ที่เหลือ (ช่วยให้ Footer อยู่ด้านล่างสุดเสมอ) */
 }
 
 /* ==========================================================
    2. CONTAINER (จัดกรอบความกว้างเนื้อหาให้อยู่ตรงกลาง)
    ================================================---------- */
 .container {
-    max-width: 1280px;
-    width: 90%;
-    margin: 0 auto;
+    max-width: 1280px; /* ความกว้างสูงสุดของเนื้อหาไม่ให้กว้างเกินไปบนจอคอมใหญ่ */
+    width: 90%;        /* ความกว้างในหน้าจอทั่วไปจะใช้ 90% ของจอ */
+    margin: 0 auto;    /* จัดให้อยู่กึ่งกลางหน้าจอซ้าย-ขวาอัตโนมัติ */
 }
 
 /* ==========================================================
    3. HEADER & NAV HEADER (ส่วนหัวและเมนูนำทาง)
    ================================================---------- */
 .header {
-    background-color: var(--header-bg-color);
-    box-shadow: var(--header-shadow);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
+    background-color: var(--header-bg-color); /* สีพื้นหลังแถบเมนู */
+    box-shadow: var(--header-shadow);         /* เงาใต้แถบเมนู */
+    position: sticky;                         /* ตรึงแถบเมนูให้อยู่ด้านบนสุดเวลาเลื่อนหน้าจอ */
+    top: 0;                                   /* ตำแหน่งตรึงติดขอบบนสุด */
+    z-index: 1000;                            /* จัดลำดับชั้นให้อยู่บนสุดไม่ให้เนื้อหาอื่นทับ */
+    backdrop-filter: blur(10px);              /* เอฟเฟกต์เบลอฉากหลังของแถบเมนู */
 }
 
 .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-block: 1.2rem;
+    display: flex;            /* จัดเรียงโลโก้และเมนูให้อยู่บรรทัดเดียวกันแบบซ้าย-ขวา */
+    justify-content: space-between; /* ดันซ้ายและขวาให้ชิดริมขอบ */
+    align-items: center;      /* จัดกึ่งกลางในแนวตั้ง */
+    padding-block: 1.2rem;    /* ระยะห่างด้านบนและล่าง */
 }
 
 .header-title {
-    color: var(--primary-color);
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 700;
+    color: var(--primary-color);          /* สีข้อความหัวข้อเว็บไซต์ */
+    font-size: clamp(1.5rem, 3vw, 2rem); /* ขนาดตัวอักษรแบบยืดหยุ่นตามหน้าจอ */
+    font-weight: 700;                     /* ความหนาตัวอักษร (ตัวหนามาก) */
 }
 
 .nav-list {
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
+    display: flex;    /* เรียงรายการเมนูแนวนอน */
+    list-style: none; /* ลบจุดวงกลมหน้าลิงก์ออก */
+    gap: 1.5rem;      /* ระยะห่างระหว่างแต่ละเมนู */
 }
 
 .nav-list a {
-    text-decoration: none;
-    color: var(--nav-text-color);
-    font-weight: 500;
-    transition: color 0.3s;
-    padding-bottom: 4px;
+    text-decoration: none;        /* เอาเส้นใต้ลิงก์ออก */
+    color: var(--nav-text-color); /* สีตัวอักษรเมนู */
+    font-weight: 500;             /* ความหนาตัวอักษรปานกลาง */
+    transition: color 0.3s;       /* เอฟเฟกต์เปลี่ยนสีอย่างนุ่มนวลเวลาเอาเมาส์ชี้ */
+    padding-bottom: 4px;          /* ระยะห่างขอบล่างสำหรับเส้นใต้ */
 }
 
 .nav-list a:hover,
 .nav-list a.active {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
+    color: var(--primary-color);          /* เปลี่ยนเป็นสีหลักเมื่อเอาเมาส์ชี้หรืออยู่หน้าปัจจุบัน */
+    border-bottom: 2px solid var(--primary-color); /* เพิ่มเส้นใต้สีน้ำเงินเน้นย้ำ */
 }
 
 /* ==========================================================
    4. HERO SECTION (ส่วนต้อนรับหน้าแรก)
    ================================================---------- */
 .hero {
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    padding-block: 4rem;
+    min-height: 70vh;        /* ความสูงขั้นต่ำ 70% ของหน้าจอ */
+    display: flex;           /* จัดเลย์เอาต์ซ้าย-ขวา */
+    align-items: center;     /* จัดกึ่งกลางแนวตั้ง */
+    justify-content: space-between; /*กระจายพื้นที่ซ้ายขวา */
+    gap: 2rem;               /* ระยะห่างระหว่างข้อความและรูปภาพ */
+    padding-block: 4rem;     /* ระยะห่างบนล่าง */
 }
 
 .hero-content {
-    flex: 1;
+    flex: 1; /* ให้ฝั่งข้อความขยายพื้นที่เต็มที่ */
 }
 
 .hero-content h3 {
-    font-size: 1.5rem;
-    color: var(--mute-text-color);
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;           /* ขนาดหัวข้อย่อย */
+    color: var(--mute-text-color); /* สีข้อความเทา */
+    margin-bottom: 0.5rem;       /* ระยะห่างด้านล่าง */
 }
 
 .hero-content h1 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 700;
-    color: var(--dark-text-color);
-    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 5vw, 3.5rem); /* ขนาดหัวข้อหลักแบบ Responsive */
+    font-weight: 700;                      /* ตัวหนา */
+    color: var(--dark-text-color);         /* สีตัวอักษรเข้ม */
+    margin-bottom: 1rem;                   /* ระยะห่างด้านล่าง */
 }
 
 .hero-content h1 span {
-    color: var(--primary-color);
+    color: var(--primary-color); /* สีเฉพาะคำใน span (เช่น ชื่อเล่น) */
 }
 
 .hero-content p {
-    font-size: 1.1rem;
-    color: var(--mute-text-color);
-    margin-bottom: 2rem;
+    font-size: 1.1rem;           /* ขนาดข้อความเกริ่นนำ */
+    color: var(--mute-text-color); /* สีเทา */
+    margin-bottom: 2rem;         /* ระยะห่างด้านล่างก่อนถึงปุ่ม */
 }
 
 .btn-group {
-    display: flex;
-    gap: 1rem;
+    display: flex; /* จัดเรียงปุ่มแนวนอน */
+    gap: 1rem;     /* ระยะห่างระหว่างปุ่ม */
 }
 
 .btn {
-    display: inline-block;
-    padding: 0.75rem 1.8rem;
-    border-radius: 999px;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    border: none;
-    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-block;                    /* จัดรูปแบบปุ่มเป็นบล็อกแบบอินไลน์ */
+    padding: 0.75rem 1.8rem;                  /* ขนาดพื้นที่ด้านในปุ่ม (บนล่าง ซ้ายขวา) */
+    border-radius: 999px;                     /* ความโค้งมนของขอบปุ่ม (ทำเป็นวงรีมน) */
+    font-weight: 600;                         /* ความหนาตัวอักษรในปุ่ม */
+    text-decoration: none;                    /* เอาเส้นใต้ลิงก์ออก */
+    cursor: pointer;                          /* เปลี่ยนรูปเคอร์เซอร์เป็นรูปมือเมื่อชี้ */
+    border: none;                             /* ไม่มีเส้นขอบเริ่มต้น */
+    transition: transform 0.2s, box-shadow 0.2s; /* เอฟเฟกต์อนิเมชันเวลากดหรือชี้ */
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
-    box-shadow: var(--card-shadow);
+    background-color: var(--primary-color); /* สีพื้นหลังปุ่มหลัก */
+    color: var(--light-text-color);         /* สีตัวอักษรในปุ่ม */
+    box-shadow: var(--card-shadow);         /* เงาปุ่ม */
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-dark-color);
-    transform: translateY(-4px);
+    background-color: var(--primary-dark-color); /* สีพื้นหลังเข้มขึ้นเมื่อเอาเมาส์ชี้ */
+    transform: translateY(-4px);                   /* ขยับปุ่มลอยขึ้นเล็กน้อย */
 }
 
 .btn-outline {
-    border: 2px solid var(--border-color);
-    color: var(--dark-text-color);
-    background: var(--light-bg-color);
+    border: 2px solid var(--border-color); /* มีเส้นขอบรอบปุ่ม */
+    color: var(--dark-text-color);         /* สีตัวอักษร */
+    background: var(--light-bg-color);     /* พื้นหลังสีขาว */
 }
 
 .btn-outline:hover {
-    border-color: var(--primary-color);
-    color: var(--primary-color);
-    transform: translateY(-4px);
+    border-color: var(--primary-color); /* เปลี่ยนสีเส้นขอบเมื่อชี้ */
+    color: var(--primary-color);        /* เปลี่ยนสีตัวหนังสือเมื่อชี้ */
+    transform: translateY(-4px);        /* ขยับปุ่มลอยขึ้นเล็กน้อย */
 }
 
 .hero-image img {
-    width: 280px;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: var(--card-shadow);
-    border: 5px solid var(--light-bg-color);
+    width: 280px;                  /* ความกว้างรูปโปรไฟล์ */
+    height: 280px;                 /* ความสูงรูปโปรไฟล์ */
+    object-fit: cover;             /* ตัดรูปให้พอดีกรอบไม่ให้เบี้ยว */
+    border-radius: 50%;            /* ทำรูปให้เป็นวงกลม */
+    box-shadow: var(--card-shadow);/* เงารอบรูป */
+    border: 5px solid var(--light-bg-color); /* ขอบสีขาวรอบรูป */
 }
 
 /* ==========================================================
    5. SECTION TITLES (หัวข้อในแต่ละหน้า)
    ================================================---------- */
 section {
-    padding-block: 3rem;
+    padding-block: 3rem; /* ระยะห่างบนล่างของแต่ละ section */
 }
 
 .page-title {
-    text-align: center;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--dark-text-color);
-    margin-bottom: 2.5rem;
+    text-align: center;            /* จัดข้อความกึ่งกลาง */
+    font-size: 2.2rem;             /* ขนาดหัวข้อหน้า */
+    font-weight: 700;              /* ตัวหนา */
+    color: var(--dark-text-color); /* สีข้อความเข้ม */
+    margin-bottom: 2.5rem;         /* ระยะห่างด้านล่าง */
 }
 
 /* ==========================================================
    6. INFO SECTION (กล่องแสดงประวัติ/เนื้อหา)
    ================================================---------- */
 .info-section {
-    background-color: var(--light-bg-color);
-    box-shadow: var(--card-shadow);
-    border-radius: 1rem;
-    padding: 2rem;
-    margin-bottom: 2rem;
+    background-color: var(--light-bg-color); /* พื้นหลังสีขาว */
+    box-shadow: var(--card-shadow);          /* เงาของกล่อง */
+    border-radius: 1rem;                     /* ความโค้งมนมุมกล่อง */
+    padding: 2rem;                           /* ระยะห่างภายในกล่อง */
+    margin-bottom: 2rem;                     /* ระยะห่างด้านล่าง */
 }
 
 .info-section h4 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+    font-size: 1.5rem;           /* ขนาดหัวข้อย่อยในกล่อง */
+    color: var(--primary-color); /* สีหัวข้อหลัก */
+    margin-bottom: 1rem;         /* ระยะห่างด้านล่าง */
 }
 
 .info-section p {
-    color: var(--dark-text-color);
-    margin-bottom: 1rem;
+    color: var(--dark-text-color); /* สีข้อความเนื้อหา */
+    margin-bottom: 1rem;           /* ระยะห่างระหว่างย่อหน้า */
 }
 
 /* ==========================================================
    7. SKILLS GRID (ส่วนแสดงทักษะความสามารถ)
    ================================================---------- */
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
-    gap: 1.5rem;
+    display: grid;                                          /* ใช้ CSS Grid จัดเรียง */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); /* จัดเรียงคอลัมน์อัตโนมัติ ขนาดขั้นต่ำ 200px */
+    gap: 1.5rem;                                            /* ระยะห่างระหว่างการ์ดทักษะ */
 }
 
 .skill-card {
-    background-color: var(--light-bg-color);
-    box-shadow: var(--card-shadow);
-    padding: 2rem;
-    border-radius: 0.75rem;
-    text-align: center;
-    transition: transform 0.25s;
+    background-color: var(--light-bg-color); /* พื้นหลังการ์ดสีขาว */
+    box-shadow: var(--card-shadow);          /* เงากล่อง */
+    padding: 2rem;                           /* ระยะห่างภายใน */
+    border-radius: 0.75rem;                  /* ความโค้งมุมการ์ด */
+    text-align: center;                      /* จัดข้อความและไอคอนกึ่งกลาง */
+    transition: transform 0.25s;             /* เอฟเฟกต์การขยับ */
 }
 
 .skill-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px); /* ขยับการ์ดลอยขึ้นเมื่อเอาเมาส์ชี้ */
 }
 
 .skill-card i {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 0.75rem;
+    font-size: 2.5rem;           /* ขนาดไอคอนทักษะ */
+    color: var(--primary-color); /* สีไอคอน */
+    margin-bottom: 0.75rem;      /* ระยะห่างระหว่างไอคอนกับข้อความ */
 }
 
 /* ==========================================================
    8. PROJECTS GRID & DETAILS (ส่วนแสดงผลงานโปรเจกต์และการพับซ่อนรายละเอียด)
    ================================================---------- */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-    gap: 1.5rem;
+    display: grid;                                          /* ใช้ CSS Grid จัดเรียงการ์ดโปรเจกต์ */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); /* จัดคอลัมน์อัตโนมัติ ขนาดขั้นต่ำ 300px */
+    gap: 1.5rem;                                            /* ระยะห่างระหว่างการ์ด */
 }
 
 .project-card {
-    background-color: var(--light-bg-color);
-    box-shadow: var(--card-shadow);
-    border-radius: 0.75rem;
-    overflow: hidden;
-    transition: transform 0.25s;
+    background-color: var(--light-bg-color); /* พื้นหลังการ์ดสีขาว */
+    box-shadow: var(--card-shadow);          /* เงากล่องการ์ด */
+    border-radius: 0.75rem;                  /* ความโค้งขอบการ์ด */
+    overflow: hidden;                        /* ซ่อนส่วนที่ล้นออกนอกขอบการ์ด (เช่น รูปภาพมุมโค้ง) */
+    transition: transform 0.25s;             /* เอฟเฟกต์การขยับ */
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px); /* ขยับการ์ดโปรเจกต์ลอยขึ้นเมื่อชี้เมาส์ */
 }
 
 .project-card img {
-    height: 16.25rem;
-    width: 100%;
-    object-fit: cover;
+    height: 16.25rem; /* ความสูงรูปภาพในการ์ดโปรเจกต์ */
+    width: 100%;     /* ความกว้างเต็มกรอบ */
+    object-fit: cover;/* ครอบรูปให้เต็มพื้นที่โดยไม่เสียสัดส่วน */
 }
 
 .project-content {
-    padding: 1.25rem;
+    padding: 1.25rem; /* ระยะห่างรอบข้อความในการ์ด */
 }
 
 .project-content h4 {
-    color: var(--primary-dark-color);
-    margin-bottom: 0.5rem;
+    color: var(--primary-dark-color); /* สีชื่อโปรเจกต์ */
+    margin-bottom: 0.5rem;            /* ระยะห่างด้านล่าง */
 }
 
 .project-content p {
-    color: var(--mute-text-color);
-    margin-bottom: 0.75rem;
+    color: var(--mute-text-color); /* สีคำอธิบายโปรเจกต์ */
+    margin-bottom: 0.75rem;        /* ระยะห่างด้านล่าง */
 }
 
 /* Details Animation (ปุ่มเปิด-ปิดดูรายละเอียด) */
 .pet-details summary {
-    list-style: none;
+    list-style: none; /* ซ่อนสัญลักษณ์ลูกศรเริ่มต้นของแท็ก details */
 }
 
 .pet-btn {
-    background-color: var(--primary-color);
-    color: var(--light-text-color);
-    text-align: center;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    margin-block: 0.75rem;
-    cursor: pointer;
-    transition: 0.3s;
-    user-select: none;
+    background-color: var(--primary-color); /* สีพื้นหลังปุ่มดูรายละเอียด */
+    color: var(--light-text-color);         /* สีตัวหนังสือในปุ่ม */
+    text-align: center;                     /* จัดข้อความกึ่งกลาง */
+    padding: 0.5rem;                        /* ระยะห่างด้านในปุ่ม */
+    border-radius: 0.5rem;                  /* ความโค้งมุมปุ่ม */
+    margin-block: 0.75rem;                  /* ระยะห่างด้านบนและล่าง */
+    cursor: pointer;                        /* เปลี่ยนเคอร์เซอร์เป็นรูปมือ */
+    transition: 0.3s;                       /* เอฟเฟกต์เปลี่ยนสี */
+    user-select: none;                      /* ป้องกันการไฮไลต์ข้อความบนปุ่มเวลาคลิก */
 }
 
 .pet-btn:hover {
-    background-color: var(--green-text-clor);
-    transform: translateY(-2px);
+    background-color: var(--green-text-clor); /* เปลี่ยนเป็นสีเขียวเมื่อเอาเมาส์ชี้ */
+    transform: translateY(-2px);              /* ขยับปุ่มขึ้นเล็กน้อย */
 }
 
-.hide-detail { display: none; }
-.pet-details[open] .show-detail { display: none; }
-.pet-details[open] .hide-detail { display: inline; }
+.hide-detail { display: none; }               /* ซ่อนข้อความ "ซ่อนรายละเอียด" เริ่มต้น */
+.pet-details[open] .show-detail { display: none; }  /* ซ่อนคำว่า "ดูรายละเอียด" เมื่อกล่องถูกเปิด */
+.pet-details[open] .hide-detail { display: inline; }/* แสดงคำว่า "ซ่อนรายละเอียด" เมื่อกล่องถูกเปิด */
 
 .pet-details-body {
-    border-top: 1px solid var(--border-color);
-    padding-top: 1rem;
-    animation: appear 0.5s ease-out;
+    border-top: 1px solid var(--border-color); /* เส้นคั่นด้านบนเนื้อหาที่ซ่อนอยู่ */
+    padding-top: 1rem;                         /* ระยะห่างด้านบน */
+    animation: appear 0.5s ease-out;           /* เล่นอนิเมชันเปิดกล่องเนื้อหา */
 }
 
 .pet-details-body ul {
-    margin-left: 1.2rem;
-    margin-top: 0.5rem;
+    margin-left: 1.2rem; /* ระยะเยื้องรายการย่อย */
+    margin-top: 0.5rem;  /* ระยะห่างด้านบน */
 }
 
 @keyframes appear {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(-20px); } /* สถานะเริ่มต้น: โปร่งใสและเลื่อนขึ้นไปซ่อน */
+    to { opacity: 1; transform: translateY(0); }         /* สถานะสิ้นสุด: ชัดเจนและอยู่ในตำแหน่งปกติ */
 }
 
 /* ==========================================================
    9. CONTACT FORM & SECTION (ฟอร์มติดต่อและไอคอนโซเชียล)
    ================================================---------- */
 .contact-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-    gap: 2rem;
+    display: grid;                                          /* ใช้ Grid จัดเรียงฟอร์มกับกล่องข้อมูล */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); /* ปรับคอลัมน์อัตโนมัติ */
+    gap: 2rem;                                            /* ระยะห่างระหว่างกล่อง */
 }
 
 .contact-section {
-    background-color: var(--light-bg-color);
-    box-shadow: var(--card-shadow);
-    border-radius: 1rem;
-    padding: 2.5rem;
-    text-align: center;
+    background-color: var(--light-bg-color); /* พื้นหลังสีขาว */
+    box-shadow: var(--card-shadow);          /* เงากล่อง */
+    border-radius: 1rem;                     /* ความโค้งมุมกล่อง */
+    padding: 2.5rem;                         /* ระยะห่างด้านใน */
+    text-align: center;                      /* จัดข้อความกึ่งกลาง */
 }
 
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    text-align: left;
+    display: flex;          /* ใช้ Flexbox จัดฟอร์มแนวตั้ง */
+    flex-direction: column; /* เรียงช่องกรอกข้อมูลจากบนลงล่าง */
+    gap: 1.2rem;            /* ระยะห่างระหว่างช่องกรอกข้อมูล */
+    text-align: left;       /* จัดข้อความชิดซ้าย */
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+    display: flex;          /* จัดกลุ่ม Label กับ Input */
+    flex-direction: column; /* เรียงป้ายชื่อไว้บนช่องกรอก */
+    gap: 0.4rem;            /* ระยะห่างระหว่างป้ายชื่อและช่องกรอก */
 }
 
 .form-group label {
-    font-weight: 500;
+    font-weight: 500; /* ความหนาป้ายชื่อฟิลด์ */
 }
 
 .form-group input,
 .form-group textarea {
-    padding: 0.8rem;
-    border: 1px solid var(--border-color);
-    border-radius: 0.5rem;
-    font-family: inherit;
+    padding: 0.8rem;               /* ระยะห่างภายในช่องกรอก */
+    border: 1px solid var(--border-color); /* เส้นขอบกล่องกรอกข้อมูล */
+    border-radius: 0.5rem;         /* ความโค้งขอบกล่อง */
+    font-family: inherit;          /* ใช้ฟอนต์เดียวกับเว็บไซต์ */
 }
 
 .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+    display: flex;          /* จัดเรียงไอคอนโซเชียลแนวนอน */
+    justify-content: center;/* จัดกึ่งกลาง */
+    gap: 1.5rem;            /* ระยะห่างระหว่างไอคอน */
+    margin-top: 1.5rem;     /* ระยะห่างด้านบน */
 }
 
 .social-icons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background-color: var(--btn-bg-gray-color);
-    color: var(--primary-color);
-    border-radius: 50%;
-    font-size: 1.2rem;
-    text-decoration: none;
-    transition: transform 0.2s, background-color 0.2s;
+    display: inline-flex;          /* จัดไอคอนให้อยู่กึ่งกลางวงกลม */
+    align-items: center;           /* กึ่งกลางแนวตั้ง */
+    justify-content: center;       /* กึ่งกลางแนวนอน */
+    width: 50px;                   /* ความกว้างปุ่มวงกลม */
+    height: 50px;                  /* ความสูงปุ่มวงกลม */
+    background-color: var(--btn-bg-gray-color); /* สีพื้นหลังวงกลม */
+    color: var(--primary-color);   /* สีไอคอน */
+    border-radius: 50%;            /* ทำเป็นวงกลม */
+    font-size: 1.2rem;             /* ขนาดไอคอน */
+    text-decoration: none;         /* เอาเส้นใต้ออก */
+    transition: transform 0.2s, background-color 0.2s; /* เอฟเฟกต์เวลามีเมาส์ชี้ */
 }
 
 .social-icons a:hover {
-    background-color: var(--secondary-color);
-    color: var(--light-text-color);
-    transform: translateY(-4px);
+    background-color: var(--secondary-color); /* เปลี่ยนสีพื้นหลังเป็นสีม่วงเมื่อชี้ */
+    color: var(--light-text-color);           /* เปลี่ยนสีไอคอนเป็นขาว */
+    transform: translateY(-4px);              /* ขยับปุ่มลอยขึ้น */
 }
 
 /* ==========================================================
    10. FOOTER (ส่วนท้ายเว็บไซต์)
    ================================================---------- */
 footer {
-    padding: 2rem;
-    background-color: var(--footer-bg-color);
-    color: var(--light-text-color);
-    margin-top: 3rem;
-    text-align: center;
+    padding: 2rem;                       /* ระยะห่างภายในส่วนท้าย */
+    background-color: var(--footer-bg-color); /* สีพื้นหลังส่วนท้าย (สีเข้ม) */
+    color: var(--light-text-color);      /* สีตัวอักษรสีขาว */
+    margin-top: 3rem;                    /* ระยะห่างด้านบนก่อนถึง Footer */
+    text-align: center;                  /* จัดข้อความลิขสิทธิ์กึ่งกลาง */
 }
 
 /* ==========================================================
    RESPONSIVE DESIGN (ปรับเลย์เอาต์สำหรับหน้าจอมือถือและแท็บเล็ต)
    ================================================---------- */
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* ทำงานเมื่อหน้าจอมีความกว้างน้อยกว่าหรือเท่ากับ 768 พิกเซล (มือถือ/แท็บเล็ต) */
     .hero {
-        flex-direction: column-reverse;
-        text-align: center;
+        flex-direction: column-reverse; /* สลับสัดส่วนหน้าแรกให้รูปภาพอยู่ด้านบน ข้อความอยู่ด้านล่าง และเรียงแนวตั้ง */
+        text-align: center;             /* จัดข้อความกึ่งกลางทั้งหมด */
     }
 
     .header-content {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: column; /* สลับแถบเมนูด้านบนให้โลโก้และรายการเมนูเรียงเป็นแนวตั้ง */
+        gap: 1.0rem;            /* ระยะห่างระหว่างโลโก้และเมนู */
     }
 
     .btn-group {
-        justify-content: center;
+        justify-content: center; /* จัดกลุ่มปุ่มในหน้าแรกให้อยู่กึ่งกลาง */
     }
 }
